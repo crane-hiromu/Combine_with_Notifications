@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 // MARK: - Delegate
 
@@ -24,7 +25,8 @@ extension SceneDelegate: UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = ViewController()
+//        window?.rootViewController = ViewController()
+        window?.rootViewController = UIHostingController(rootView: SwiftUIView())
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

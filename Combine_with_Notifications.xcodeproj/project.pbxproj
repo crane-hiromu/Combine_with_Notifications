@@ -15,6 +15,8 @@
 		1DF39EFC2395305B0088E279 /* Combine_with_NotificationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF39EFB2395305B0088E279 /* Combine_with_NotificationsTests.swift */; };
 		1DF39F072395305B0088E279 /* Combine_with_NotificationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF39F062395305B0088E279 /* Combine_with_NotificationsUITests.swift */; };
 		84408FD02396A99400016B59 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408FCF2396A99400016B59 /* ViewModel.swift */; };
+		84408FD22396AF5A00016B59 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408FD12396AF5A00016B59 /* SwiftUIView.swift */; };
+		84408FD52396BBA800016B59 /* UIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84408FD42396BBA800016B59 /* UIViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		1DF39F062395305B0088E279 /* Combine_with_NotificationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combine_with_NotificationsUITests.swift; sourceTree = "<group>"; };
 		1DF39F082395305B0088E279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84408FCF2396A99400016B59 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		84408FD12396AF5A00016B59 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		84408FD42396BBA800016B59 /* UIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +105,8 @@
 			children = (
 				1DF39EE4239530590088E279 /* AppDelegate.swift */,
 				1DF39EE6239530590088E279 /* SceneDelegate.swift */,
-				84408FCC2396A96900016B59 /* NotificationCenter+MVVM */,
+				84408FCC2396A96900016B59 /* ViewController+MVVM */,
+				84408FD32396B10C00016B59 /* SwiftUI+MVVM */,
 				1DF39EED2395305A0088E279 /* Assets.xcassets */,
 				1DF39EEF2395305A0088E279 /* LaunchScreen.storyboard */,
 				1DF39EF22395305A0088E279 /* Info.plist */,
@@ -127,13 +132,22 @@
 			path = Combine_with_NotificationsUITests;
 			sourceTree = "<group>";
 		};
-		84408FCC2396A96900016B59 /* NotificationCenter+MVVM */ = {
+		84408FCC2396A96900016B59 /* ViewController+MVVM */ = {
 			isa = PBXGroup;
 			children = (
 				1DF39EE8239530590088E279 /* ViewController.swift */,
 				84408FCF2396A99400016B59 /* ViewModel.swift */,
 			);
-			path = "NotificationCenter+MVVM";
+			path = "ViewController+MVVM";
+			sourceTree = "<group>";
+		};
+		84408FD32396B10C00016B59 /* SwiftUI+MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				84408FD12396AF5A00016B59 /* SwiftUIView.swift */,
+				84408FD42396BBA800016B59 /* UIViewModel.swift */,
+			);
+			path = "SwiftUI+MVVM";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +284,8 @@
 				1DF39EE5239530590088E279 /* AppDelegate.swift in Sources */,
 				84408FD02396A99400016B59 /* ViewModel.swift in Sources */,
 				1DF39EE7239530590088E279 /* SceneDelegate.swift in Sources */,
+				84408FD52396BBA800016B59 /* UIViewModel.swift in Sources */,
+				84408FD22396AF5A00016B59 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

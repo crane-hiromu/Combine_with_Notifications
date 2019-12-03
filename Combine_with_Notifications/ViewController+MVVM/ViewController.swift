@@ -16,7 +16,7 @@ final class ViewController: UIViewController {
     // MARK: Propepties
     
     private var cancellables: Set<AnyCancellable> = []
-    private var viewModel: ViewModel = ViewModel()
+    private var viewModel: ViewModelType = ViewModel()
     
     
     // MARK: Overrides

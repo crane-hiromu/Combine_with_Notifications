@@ -48,3 +48,4 @@ class ViewModel: ViewModelType, ViewModelInputs, ViewModelOutputs {
         _isLandscape.send(UIDevice.current.orientation.isLandscape)
     }
 }
+
