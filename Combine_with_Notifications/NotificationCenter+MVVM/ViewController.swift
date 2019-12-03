@@ -40,39 +40,3 @@ final class ViewController: UIViewController {
             .store(in: &cancellables)
     }
 }
-
-protocol ViewModelInputs {
-    func didChangeOrientation(notification: Notification)
-}
-
-protocol ViewModelOutputs {
-    var isLandscape: AnyPublisher<Bool, Never> { get }
-}
-
-protocol ViewModelType {
-    var inputs: ViewModelInputs { get }
-    var outputs: ViewModelOutputs { get }
-}
-
-class ViewModel: ViewModelType, ViewModelInputs, ViewModelOutputs {
-    
-    // MARK: ViewModelType
-    
-    var inputs: ViewModelInputs { self }
-    var outputs: ViewModelOutputs { self }
-    
-    
-    // MARK: ViewModelOutputs
-    
-    private let _isLandscape = PassthroughSubject<Bool, Never>()
-    var isLandscape: AnyPublisher<Bool, Never> {
-        _isLandscape.eraseToAnyPublisher()
-    }
-    
-    
-    //MARK: ViewModelInputs
-    
-    func didChangeOrientation(notification: Notification) {
-        _isLandscape.send(UIDevice.current.orientation.isLandscape)
-    }
-}
