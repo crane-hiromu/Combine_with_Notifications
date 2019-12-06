@@ -6,13 +6,17 @@
 //  Copyright © 2019 Hiromu Tsuruta. All rights reserved.
 //
 
+/*
+Not working @Published on Protocol
+*/
+
 import SwiftUI
 
 struct _SwiftUIBindingView: View {
 
     // MARK: Properties
     
-    let viewModel: _UIBindingViewModelType
+    var viewModel: _UIBindingViewModelType
     
     
     // MARK: View
@@ -20,8 +24,11 @@ struct _SwiftUIBindingView: View {
     var body: some View {
         EmptyView()
             .onAppear() {
-                print(self.viewModel.outputs.isLandscape)
+                self.viewModel.iuputs.onAppear()
             }
+            // .onReceive(self.viewModel.outputs.isLandscape) {
+            //    print($0)
+            //}
     }
 }
 

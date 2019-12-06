@@ -17,7 +17,6 @@ import Combine
 
 protocol _UIBindingViewModelInputs: AnyObject {
     func onAppear()
-    func didChangeOrientation()
 }
 
 protocol _UIBindingViewModelOutputs: AnyObject {
@@ -52,19 +51,23 @@ final class _UIBindingViewModel: ObservableObject, _UIBindingViewModelAdapter  {
     // MARK: _UIBindingViewModelInputs
     
     func onAppear() {
-        isLandscapeSubject
+        NotificationCenter
+            .Publisher(center: .default, name: UIDevice.orientationDidChangeNotification, object: nil)
+            .map { _ in UIDevice.current.orientation.isLandscape }
+            .sink { [weak self] isLandscape in
+                self?.isLandscape$.send(isLandscape)
+            }
+            .store(in: &cancellables)
+        
+        isLandscape$
             .map { $0 }
             .assign(to: \.isLandscape, on: self)
             .store(in: &cancellables)
     }
     
-    func didChangeOrientation() {
-        isLandscapeSubject.send(UIDevice.current.orientation.isLandscape)
-    }
-    
     
     // MARK: _UIBindingViewModelOutputs
     
-    private let isLandscapeSubject = PassthroughSubject<Bool, Never>()
+    private let isLandscape$ = PassthroughSubject<Bool, Never>()
     @Published var isLandscape: Bool = false
 }
