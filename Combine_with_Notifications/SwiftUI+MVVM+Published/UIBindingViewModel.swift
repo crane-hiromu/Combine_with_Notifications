@@ -16,11 +16,11 @@ final class UIBindingViewModel: ObservableObject {
     // MARK: Properties
     
     private var cancellables = Set<AnyCancellable>()
-    private let isLandscapeSubject = PassthroughSubject<Bool, Never>()
     
     
     // MARK: Outputs
     
+    private let isLandscape$ = PassthroughSubject<Bool, Never>()
     @Published var isLandscape: Bool = false
     
     
@@ -31,9 +31,13 @@ final class UIBindingViewModel: ObservableObject {
             .Publisher(center: .default, name: UIDevice.orientationDidChangeNotification, object: nil)
             .map { _ in UIDevice.current.orientation.isLandscape }
             .sink { [weak self] isLandscape in
-                print("---sink", isLandscape)
-                self?.isLandscapeSubject.send(isLandscape)
+                self?.isLandscape$.send(isLandscape)
             }
+            .store(in: &cancellables)
+        
+        isLandscape$
+            .map { $0 }
+            .assign(to: \.isLandscape, on: self)
             .store(in: &cancellables)
     }
 }
