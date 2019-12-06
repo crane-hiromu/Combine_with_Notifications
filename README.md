@@ -2,9 +2,9 @@
 
 ## Description
 
-Handle rotating from Notification.
+Handle rotating from NotificationCenter with Combine.
 
-You can choose 3 pattrn.
+You can choose 3 pattern.
 - UIViewController + MVVM
 - SwiftUI + MVVM (output from AnyPublisher)
 - SwiftUI + MVVM (output from @Published)
