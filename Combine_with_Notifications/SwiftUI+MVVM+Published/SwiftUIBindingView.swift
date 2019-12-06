@@ -6,6 +6,7 @@
 //  Copyright © 2019 Hiromu Tsuruta. All rights reserved.
 //
 
+import UIKit
 import SwiftUI
 
 // MARK: - UIView
@@ -14,7 +15,7 @@ struct SwiftUIBindingView: View {
     
     // MARK: Properties
     
-    private var viewModel = UIBindingViewModel()
+    @ObservedObject var viewModel: UIBindingViewModel
     
     
     // MARK: View
@@ -22,13 +23,16 @@ struct SwiftUIBindingView: View {
     var body: some View {
         EmptyView()
             .onAppear() {
-                print(self.viewModel.$isLandscape)
+                self.viewModel.onAppear()
+            }
+            .onReceive(self.viewModel.$isLandscape) {
+                print($0)
             }
     }
 }
 
 struct SwiftUIBindingView_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIBindingView()
+        SwiftUIBindingView(viewModel: UIBindingViewModel())
     }
 }

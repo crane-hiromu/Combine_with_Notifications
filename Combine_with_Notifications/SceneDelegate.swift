@@ -26,7 +26,10 @@ extension SceneDelegate: UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
 //        window?.rootViewController = ViewController()
-        window?.rootViewController = UIHostingController(rootView: SwiftUIView())
+//        window?.rootViewController = UIHostingController(rootView: SwiftUIView(viewModel: UIViewModel()))
+        window?.rootViewController = UIHostingController(rootView: SwiftUIBindingView(viewModel: UIBindingViewModel()))
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

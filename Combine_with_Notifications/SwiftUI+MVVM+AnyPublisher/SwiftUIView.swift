@@ -14,7 +14,7 @@ struct SwiftUIView: View {
     
     // MARK: Properties
         
-    private var viewModel: UIViewModelType = UIViewModel()
+    let viewModel: UIViewModelType
     
     
     // MARK: View
@@ -44,6 +44,6 @@ struct SwiftUIView: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIView()
+        SwiftUIView(viewModel: UIViewModel())
     }
 }

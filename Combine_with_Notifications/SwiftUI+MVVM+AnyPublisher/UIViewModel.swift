@@ -11,19 +11,20 @@ import Combine
 
 // MARK: - MVVM
 
-protocol UIViewModelInputs {
+protocol UIViewModelInputs: AnyObject {
     func didChangeOrientation(notification: Notification)
     func willStore(cancellable: AnyCancellable)
 }
 
-protocol UIViewModelOutputs {
+protocol UIViewModelOutputs: AnyObject {
     var isLandscape: AnyPublisher<Bool, Never> { get }
 }
 
-protocol UIViewModelType {
+protocol UIViewModelType: AnyObject {
     var inputs: UIViewModelInputs { get }
     var outputs: UIViewModelOutputs { get }
 }
+
 
 // MARK: - ViewModel
 

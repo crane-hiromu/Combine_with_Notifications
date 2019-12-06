@@ -27,13 +27,13 @@ final class UIBindingViewModel: ObservableObject {
     // MARK: Inputs
     
     func onAppear() {
-        isLandscapeSubject
-            .map { $0 }
-            .assign(to: \.isLandscape, on: self)
+        NotificationCenter
+            .Publisher(center: .default, name: UIDevice.orientationDidChangeNotification, object: nil)
+            .map { _ in UIDevice.current.orientation.isLandscape }
+            .sink { [weak self] isLandscape in
+                print("---sink", isLandscape)
+                self?.isLandscapeSubject.send(isLandscape)
+            }
             .store(in: &cancellables)
-    }
-    
-    func didChangeOrientation() {
-        isLandscapeSubject.send(UIDevice.current.orientation.isLandscape)
     }
 }

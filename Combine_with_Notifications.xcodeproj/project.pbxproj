@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1DC03105239A3515000CDA83 /* SwiftUIBindingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03104239A3515000CDA83 /* SwiftUIBindingView.swift */; };
 		1DC03107239A352F000CDA83 /* UIBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03106239A352F000CDA83 /* UIBindingViewModel.swift */; };
+		1DC0310A239A3DF1000CDA83 /* _UIBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03109239A3DF1000CDA83 /* _UIBindingViewModel.swift */; };
+		1DC0310C239A4054000CDA83 /* _SwiftUIBindingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC0310B239A4054000CDA83 /* _SwiftUIBindingView.swift */; };
 		1DF39EE5239530590088E279 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF39EE4239530590088E279 /* AppDelegate.swift */; };
 		1DF39EE7239530590088E279 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF39EE6239530590088E279 /* SceneDelegate.swift */; };
 		1DF39EE9239530590088E279 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF39EE8239530590088E279 /* ViewController.swift */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		1DC03104239A3515000CDA83 /* SwiftUIBindingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBindingView.swift; sourceTree = "<group>"; };
 		1DC03106239A352F000CDA83 /* UIBindingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBindingViewModel.swift; sourceTree = "<group>"; };
+		1DC03109239A3DF1000CDA83 /* _UIBindingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIBindingViewModel.swift; sourceTree = "<group>"; };
+		1DC0310B239A4054000CDA83 /* _SwiftUIBindingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _SwiftUIBindingView.swift; sourceTree = "<group>"; };
 		1DF39EE1239530590088E279 /* Combine_with_Notifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Combine_with_Notifications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF39EE4239530590088E279 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DF39EE6239530590088E279 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,15 @@
 			path = "SwiftUI+MVVM+Published";
 			sourceTree = "<group>";
 		};
+		1DC03108239A3DD4000CDA83 /* SwiftUI+MVVM+NotWorking */ = {
+			isa = PBXGroup;
+			children = (
+				1DC0310B239A4054000CDA83 /* _SwiftUIBindingView.swift */,
+				1DC03109239A3DF1000CDA83 /* _UIBindingViewModel.swift */,
+			);
+			path = "SwiftUI+MVVM+NotWorking";
+			sourceTree = "<group>";
+		};
 		1DF39ED8239530590088E279 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +134,7 @@
 				84408FCC2396A96900016B59 /* ViewController+MVVM */,
 				84408FD32396B10C00016B59 /* SwiftUI+MVVM+AnyPublisher */,
 				1DC03103239A34DD000CDA83 /* SwiftUI+MVVM+Published */,
+				1DC03108239A3DD4000CDA83 /* SwiftUI+MVVM+NotWorking */,
 				1DF39EED2395305A0088E279 /* Assets.xcassets */,
 				1DF39EEF2395305A0088E279 /* LaunchScreen.storyboard */,
 				1DF39EF22395305A0088E279 /* Info.plist */,
@@ -294,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DC0310C239A4054000CDA83 /* _SwiftUIBindingView.swift in Sources */,
 				1DC03107239A352F000CDA83 /* UIBindingViewModel.swift in Sources */,
 				1DF39EE9239530590088E279 /* ViewController.swift in Sources */,
 				1DF39EE5239530590088E279 /* AppDelegate.swift in Sources */,
@@ -301,6 +316,7 @@
 				84408FD02396A99400016B59 /* ViewModel.swift in Sources */,
 				1DF39EE7239530590088E279 /* SceneDelegate.swift in Sources */,
 				84408FD52396BBA800016B59 /* UIViewModel.swift in Sources */,
+				1DC0310A239A3DF1000CDA83 /* _UIBindingViewModel.swift in Sources */,
 				84408FD22396AF5A00016B59 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
