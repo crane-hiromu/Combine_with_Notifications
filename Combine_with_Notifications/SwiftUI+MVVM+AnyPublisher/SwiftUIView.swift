@@ -8,9 +8,16 @@
 
 import SwiftUI
 
+// MARK: - UIView
+
 struct SwiftUIView: View {
+    
+    // MARK: Properties
         
     private var viewModel: UIViewModelType = UIViewModel()
+    
+    
+    // MARK: View
     
     var body: some View {
         EmptyView()
