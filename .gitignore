@@ -18,6 +18,8 @@ DerivedData
 
 # CocoaPod
 Pods/*
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
 
 # Carthage
 Carthage/Checkouts
